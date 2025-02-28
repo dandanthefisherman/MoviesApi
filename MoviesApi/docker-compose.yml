@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrongPassword123
+    ports:
+      - "1433:1433"
+    networks:
+      - moviesdb-network
+    volumes:
+      - moviesdb-data:/var/opt/mssql
+
+networks:
+  moviesdb-network:
+    driver: bridge
+
+volumes:
+  moviesdb-data:
+    driver: local
