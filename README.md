@@ -15,7 +15,6 @@ Start the API server with:
 
 dotnet run
 
-The API will be available at http://localhost:5000.
 
 First Run - Seed Data
 On the first run, the API will automatically seed the database with movies that have titles starting with "The" for easy searching.
