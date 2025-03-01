@@ -234,7 +234,7 @@ public static class SeedData
                 new Movie
                 {
                     ReleaseDate = new DateTime(2017, 11, 17),
-                    Title = "The Disaster Artist",
+                    Title = "Disaster Artist",
                     Overview = "A behind-the-scenes look at the making of the cult film, 'The Room'.",
                     Popularity = 69.0,
                     VoteCount = 5000,
@@ -246,7 +246,7 @@ public static class SeedData
                 new Movie
                 {
                     ReleaseDate = new DateTime(2018, 1, 5),
-                    Title = "The Post",
+                    Title = "Post",
                     Overview = "The Washington Post uncovers a web of secrets surrounding the government’s involvement in the Vietnam War.",
                     Popularity = 71.0,
                     VoteCount = 4000,

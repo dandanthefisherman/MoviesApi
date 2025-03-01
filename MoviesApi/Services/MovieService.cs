@@ -14,17 +14,19 @@ namespace MoviesApi.Services
         
         public async Task<MovieSearchResponse> GetMoviesByTitleAsync(MovieSearchRequest movieSearchRequest)
         {
-            var movies = _repository.GetMoviesByTitleAsync(movieSearchRequest.Title,movieSearchRequest.Limit);
+            var movies = _repository.GetMoviesByTitleAsync(movieSearchRequest.Title,movieSearchRequest.Limit).Result;
+            
             var skipCount = (movieSearchRequest.PageNumber - 1) * movieSearchRequest.PageSize;
 
-            var paginatedMovies = movies.Result
+            var paginatedMovies = movies
                 .Skip(skipCount)
                 .Take(movieSearchRequest.PageSize);
             
-             var totalPages = (int)Math.Ceiling(movies.Result.Count() / (double)movieSearchRequest.PageSize);
+             var totalPages = (int)Math.Ceiling(movies.Count() / (double)movieSearchRequest.PageSize);
+            
              var response = new MovieSearchResponse
              {
-                 TotalMovies = movies.Result.Count(),
+                 TotalMovies = movies.Count(),
                  TotalPages = totalPages,
                  CurrentPage = movieSearchRequest.PageNumber,
                  PageSize = paginatedMovies.Count(),
