@@ -31,6 +31,7 @@ Total Movies: Total number of movies in the database.
 Total Pages: Total pages based on page size.Pages: The total number of pages, calculated based on the page size and total number of movies. size, page number, total movies, total pages
 
 
+
 SWAGGER:
 
 The API will be available at http://localhost:5021/swagger.
